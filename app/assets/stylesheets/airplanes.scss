@@ -1,3 +1,21 @@
 // Place all the styles related to the Airplanes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 0;
+}
+
+.navbar li {
+  display: inline;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.seatDiagram {
+  border: solid 1px;
+}
