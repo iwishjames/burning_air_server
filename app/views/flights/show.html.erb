@@ -25,5 +25,15 @@
   <%= @flight.airplane_id %>
 </p>
 
+<p>
+  <strong>Seats:</strong>
+  <ul>
+    <!-- filter through the seats associated with this flight, and render each seat on the page. seats set in the update method in the flights controller -->
+  <% @flight.seats.each do |seat| %>
+    <li>row: <%= seat.row %>, column: <%= seat.column %>, is booked: <%= seat.is_taken %></li>
+  <% end %>
+  </ul>
+</p>
+
 <%= link_to 'Edit', edit_flight_path(@flight) %> |
 <%= link_to 'Back', flights_path %>
