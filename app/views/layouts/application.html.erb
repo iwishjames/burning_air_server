@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <div>
+      <ul class="navbar">
+        <li><%= link_to "Planes", airplanes_path %></li>
+        <li><%= link_to "Flights", flights_path %></li>
+        <li><%= link_to "Admin", airplanes_path %></li>
+      </ul>
+    </div>
     <%= yield %>
   </body>
 </html>

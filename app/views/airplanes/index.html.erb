@@ -29,3 +29,21 @@
 <br>
 
 <%= link_to 'New Airplane', new_airplane_path %>
+
+<% @airplanes.each do |airplane| %>
+<h1>Airplane <%= airplane.name %></h1>
+
+<div>
+  <tr>
+      <% @airplanes.each do |r| %>
+      <td class="seatDiagram"><%= airplane.rows %></td>
+      <% end %>
+  </tr>
+  <tr>
+        <% @airplanes.each do |airplane| %>
+        <th align=left class="seatDiagram"><%= airplane.columns %></th>
+        <% end %>
+  </tr>
+</div>
+
+<% end %>
