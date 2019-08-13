@@ -24,7 +24,22 @@ class FlightsController < ApplicationController
   # POST /flights
   # POST /flights.json
   def create
+    # TODO: why change from new to create makes it so I can access the @flight.id
     @flight = Flight.new(flight_params)
+
+    # when a flight is created, create all the associated seats
+    @airplane = Airplane.find @flight.airplane_id
+    # find the number of rows/columns that the aeroplane has, create a range from 1 to that number, then split that into an array.
+    # this will allow us to loop through and create a seat for each value below
+    @rows = (1..@airplane.rows).to_a
+    @columns = (1..@airplane.columns).to_a
+    # create a seat for each row and column and associate it with this flight.
+    @rows.each do |row|
+      @columns.each do |col|
+        seat = Seat.create :row => row, :column => col, :is_taken => false
+        @flight.seats << seat
+      end
+    end
 
     respond_to do |format|
       if @flight.save
@@ -70,5 +85,10 @@ class FlightsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def flight_params
       params.require(:flight).permit(:flight_num, :date, :from, :to, :airplane_id)
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def seat_params
+      params.require(:seat).permit(:row, :column, :is_taken, :flight_id)
     end
 end

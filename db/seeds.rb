@@ -23,8 +23,8 @@ a2 = Airplane.create :rows => 10, :columns => 12, :name => "756"
 Flight.destroy_all
 puts "Creating flights!"
 
-f1 = Flight.create :flight_num => 12, :from => "SYD", :to => "BRI"
-f2 = Flight.create :flight_num => 33, :from => "SYD", :to => "MEL"
+f1 = Flight.create :flight_num => 12, :from => "SYD", :to => "BRI", :date => "2019-08-13"
+f2 = Flight.create :flight_num => 33, :from => "SYD", :to => "MEL", :date => "2019-08-13"
 
 Reservation.destroy_all
 puts "Making Reservations!"
