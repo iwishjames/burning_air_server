@@ -69,6 +69,6 @@ class SeatsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def seat_params
-      params.require(:seat).permit(:row, :column, :is_taken)
+      params.require(:seat).permit(:row, :column, :is_taken, :taken_by_user)
     end
 end

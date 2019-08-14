@@ -7,6 +7,7 @@ json.set! :flight do
       json.row seat.row
       json.column seat.column
       json.is_taken seat.is_taken
+      json.taken_by_user seat.taken_by_user
       json.flight_id seat.flight_id
     end
   end
