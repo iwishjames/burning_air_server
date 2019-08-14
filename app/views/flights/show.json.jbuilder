@@ -1,1 +1,1 @@
-json.partial! "flights/flight", flight: @flight
+json.partial! "flights/flightseats", flight: @flight, seats: @seats

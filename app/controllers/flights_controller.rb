@@ -5,16 +5,19 @@ class FlightsController < ApplicationController
   # GET /flights.json
   def index
     @flights = Flight.all
+
   end
 
   # GET /flights/1
   # GET /flights/1.json
   def show
+    @seats = @flight.seats
   end
 
   # GET /flights/new
   def new
     @flight = Flight.new
+    @seats = @flight.seats
   end
 
   # GET /flights/1/edit
@@ -80,6 +83,7 @@ class FlightsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_flight
       @flight = Flight.find(params[:id])
+      @seats = @flight.seats
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
