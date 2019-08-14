@@ -12,6 +12,7 @@ class AirplanesController < ApplicationController
   def show
     @seating_row = [*1..@airplane.rows]
     @seating_column = [*1..@airplane.columns]
+    @alphabet = [*("A".."Z")]
   end
 
   # GET /airplanes/new
