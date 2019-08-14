@@ -17,3 +17,19 @@
 
 <%= link_to 'Edit', edit_airplane_path(@airplane) %> |
 <%= link_to 'Back', airplanes_path %>
+
+
+<h2>Seating Diagram</h2>
+
+  <div>
+    <% @seating_row.each do |r| %>
+      <div class="row_limit">
+          <%= @alphabet[r - 1] %>
+          <% @seating_column.each do |c| %>
+          <div class="colmn_limit seatDiagram">
+          <%= c %>
+          </div>
+          <% end %>
+      </div>
+    <% end %>
+  </div>
