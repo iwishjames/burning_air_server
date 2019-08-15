@@ -7,6 +7,8 @@
 #  seat_column :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  user_id     :integer
+#  flight_id   :integer
 #
 
 class Reservation < ApplicationRecord
