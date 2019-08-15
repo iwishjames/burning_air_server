@@ -28,7 +28,7 @@ class FlightsController < ApplicationController
   # POST /flights.json
   def create
     # TODO: why change from new to create makes it so I can access the @flight.id
-    @flight = Flight.new(flight_params)
+    @flight = Flight.create(flight_params)
 
     # when a flight is created, create all the associated seats
     @airplane = Airplane.find @flight.airplane_id
